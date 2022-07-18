@@ -1,0 +1,67 @@
+.bg-theme{
+    background-color:#ffb6c1 ;
+}
+.cardsview{
+        margin-top: 25px;
+        border: 1px solid black;
+        margin: 10px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #ffcbd3 ;
+        transition: 1s;
+        overflow: hidden;
+        height:280px;
+}
+.cardsview img{
+    height:240px;
+    transition: 0.5s;
+    border-radius: 10px;
+    overflow: hidden;
+    
+  }
+.cardsview:hover img{
+  transform: scale(1.1);
+  border-radius: 10px;
+}
+
+.adinput{
+  width:100%;
+  margin-top: 10px;
+}
+.adinputbtn{
+  align-items: center;
+  margin-left:40%;
+  margin-top:10px;
+}
+.btn{
+  color:#fc0f32;
+}
+.adminform{
+  padding:15px;
+ }
+.btn:hover{
+ 
+    background-color: #ffb6c1 ;
+ 
+ 
+}
+#myTextarea {
+  width: 100% !important;
+}
+#logo{
+  width: 80px;
+  margin-top:0;
+    border-radius: 50%;
+}
+.adpanel{
+  height:100px;
+  background:linear-gradient(white, white, coral);
+
+  
+}
+.adpanel p{
+  font-size: 18px;
+  margin-top:5px;
+  
+  
+}
