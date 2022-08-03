@@ -15,12 +15,13 @@ $cheks = "disabled";
 
 
 <!-- products div -->
- <div class="col-md-9"> 
-    <div class="col-md-7 col-md-offset-1 bg-theme shadow ">
+<div class="col-md-12">
+ 
+    <div class="container bg-theme shadow ">
         <div class="col-md-7 text-left font-weight-bold">
             <h5><i class="fa fa-shopping-cart"></i> Your Cart</h5>
         </div> 
-        <div class="col-md-3 p-1 text-right ">
+        <div class=" text-right ">
             <a href="emptycart.php" class="nav-link">Empty Cart</a>
         </div>
     </div>
@@ -59,7 +60,7 @@ $cheks = "disabled";
                         $amt = $qty*$row['price'];
                         $total = $total+$amt;
                         ?>
-                        <div class="col-md-7 col-md-offset-1 shadow p-0 mb-5 my-5 bg-white rounded">
+                        <div class="container shadow p-0 mb-5 my-5 bg-white rounded">
                 <div class="col-md-2 my-3">
                      <img src="productimages/<?php echo $row['image']; ?>" class="img-responsive thumbnail"alt="">
                 </div>
@@ -97,7 +98,7 @@ $cheks = "disabled";
         <?php            $loadpage = "checkout.php";      
          }
                     }else{ ?>
-                        <div class="col-md-7 col-md-offset-1  text-center p-0 mb-5 my-5 bg-white rounded">
+                        <div class="container  text-center p-0 mb-5 my-5 bg-white rounded">
                         <?php echo "Your Cart is empty.";
                          $cheks = "disabled";
                         $checkout = 1; ?>
@@ -135,7 +136,7 @@ $cheks = "disabled";
                    
                     ?>
 
-        <div class="col-md-7 col-md-offset-1 shadow p-0 mb-5 my-5 bg-white rounded">
+        <div class="container shadow p-0 mb-5 my-5 bg-white rounded">
                 <div class="col-md-2 my-2">
                  <img src="productimages/<?php echo $row['image']; ?>" class="img-responsive thumbnail"alt="">
                  </div>
@@ -176,7 +177,7 @@ $cheks = "disabled";
                     $loadpage = "checkout.php";
 		        }}
         else{?>
-              <div class="col-md-7 col-md-offset-1  text-center p-0 mb-5 my-5 bg-white rounded">
+              <div class="container  text-center p-0 mb-5 my-5 bg-white rounded">
               <?php echo "Your Cart is empty.";
               $cheks = "disabled";
               $loadpage = ""; ?>
@@ -191,7 +192,7 @@ $cheks = "disabled";
        <?php $_SESSION['total'] = $total ?>
 <!-- calculations div -->
                
-<div class="col-md-2 text-left">
+<div class= "container text-left ">
     <div class="col-md-12  shadow p-0 mb-5 bg-white rounded">
     <div class="col-md-12 text-center font-weight-bold">
        
@@ -228,21 +229,17 @@ $cheks = "disabled";
             $d = 50;
             }else{
                 $pincode = $_SESSION['pincode'];
-                $delcmd ="select * from delcharge where pincode = $pincode";
+                $delcmd ="select * from delcharge where pincode = '".$pincode."'";
                     $delchardata = mysqli_query($conn, $delcmd);
-                    $delcharnum = mysqli_num_rows($delchardata);
-                    
+                    $delcharnum = mysqli_num_rows($delchardata);                    
                     if($delcharnum != 0){
                         $delcharrow = mysqli_fetch_array($delchardata);
-                        
                         if($total >= $delcharrow['minamnt']){
                             $_SESSION['delcharge'] = '0';
                             $d = 0;
-                            
                         }else{
                             $_SESSION['delcharge'] = $delcharrow['delchar'];
                             $d = $delcharrow['delchar']; 
-                            
                         }
                     }else{
                         $_SESSION['delcharge'] = 50;
@@ -253,10 +250,9 @@ $cheks = "disabled";
                 $pincode = $_POST['pincode'];
                 $_SESSION['pincode'] = $pincode;
                 // }else{
-                    $delcmd ="select * from delcharge where pincode = $pincode";
+                    $delcmd ="select * from delcharge where pincode = '".$pincode."'";
                     $delchardata = mysqli_query($conn, $delcmd);
                     $delcharnum = mysqli_num_rows($delchardata);
-                    
                     if($delcharnum != 0){
                         $delcharrow = mysqli_fetch_array($delchardata);
                         
@@ -334,6 +330,7 @@ $cheks = "disabled";
       </div>
     </div>
     </div>
+</div>
     
 
         <script>

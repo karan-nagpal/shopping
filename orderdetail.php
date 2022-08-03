@@ -6,6 +6,7 @@ include('dbconnect.php');
 <h3 class="text-center">Order details</h3>
 
 <?php
+include('dbconnect.php');
 $usr = $_SESSION['userid'];
 $oid = $_GET['oid'];
 

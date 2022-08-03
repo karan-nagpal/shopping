@@ -2,6 +2,9 @@
 include('header.php');
 include('dbconnect.php');
 ?>
+<div class="col-md-12" style="height:750px">
+
+
 <h3 class="text-center">Your orders</h3>
 <?php
 $usr = $_SESSION['userid'];
@@ -51,6 +54,7 @@ if($numrow > 0){
 }
 ?>
 </table>
+</div>
 <?php
 
 include('footer.php');

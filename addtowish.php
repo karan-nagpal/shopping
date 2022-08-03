@@ -8,9 +8,7 @@ else{
     header('location:userlogin.php');
     $_SESSION['wish'] = "yes";
 }
-echo $user;
 $proid = $_GET['pid'];
-echo $proid;
 $cmd2 = "select * from wishlist where userid = '".$user."' and proid = '".$proid."'";
 $data = mysqli_query($conn, $cmd2);
 $numrow = mysqli_num_rows($data);

@@ -1,11 +1,10 @@
 <?php 
-
+include('header.php');
 if(isset($_SESSION['sname'])){
     $st ="disabled";
 }else{
     $st='';
 }
-    include('header.php');
     include('dbconnect.php');
 ?>
 

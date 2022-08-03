@@ -65,8 +65,8 @@
   background-color: none;
 }
 .la a{
-  padding-left:55px;
-  padding-right:60px;
+  padding-left:40px;
+  padding-right:50px;
 }
 .hornavmenu:hover {
   background-color: #f19eab;
@@ -101,15 +101,38 @@
   text-decoration: none; 
   
 }
-.catview p{  
+.catview h3{  
   background-color: rgba(255,255,255,0.5);
   color:black;
   transition: 1s;
   font-size: 20px;
   opacity: 0;
 }
-.catview:hover p{
+.catview:hover h3{
   margin-top: -115px;
   opacity: 0.99;
 }
 
+@media (max-width:810px){
+  
+    .footer .social ul {
+   display: flex;  }
+   .footer .social ul li{
+      margin: auto;
+   }
+   .la a{
+    padding-left:20px;
+    padding-right:10px;
+  }
+  
+}
+@media (max-width:690px){
+
+ .catcontainer{
+  display: inline-block;
+ }
+ .catview{
+  margin: auto;
+  align-self: center;
+ }
+}

@@ -5,7 +5,6 @@ if(!isset($_SESSION['aid'])){
 }
 include('dbconnect.php');
 $id = $_GET['did'];
-echo $id;
 $cmd = "delete from categories where catid = '$id'";
 mysqli_query($conn, $cmd);
 header("location:addcat.php?del");

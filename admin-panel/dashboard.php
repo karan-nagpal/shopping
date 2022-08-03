@@ -1,8 +1,10 @@
 <?php
 include('header.php');
-
 include('dbconnect.php');
 include('leftnav.php');
+if(!isset($_SESSION['aid'])){
+    header('location:index.php');
+  }
 ?>
 <div class="col-md-10 text-center"style="min-height:700px; padding-top:50px">
 <h3>Your Business at a glance</h3>

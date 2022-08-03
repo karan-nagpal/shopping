@@ -5,7 +5,7 @@ if(!isset($_SESSION['aid'])){
 }
 include('dbconnect.php');
 $id = $_GET['did'];
-echo $id;
+
 $cmd = "select * from discounts where DisId=$id";
 
         $data = mysqli_query($conn, $cmd);

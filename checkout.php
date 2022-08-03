@@ -1,11 +1,12 @@
 <?php 
-include('header.php');
+session_start();
 if(!isset($_SESSION['userid'])){
     $_SESSION['checkout'] = 'yes';
     header('location:userlogin.php');
 }else{
     $userid  = $_SESSION['userid'];
 }
+include('header.php');
 include('dbconnect.php');
 
 $userid = $_SESSION['userid'];
@@ -29,6 +30,7 @@ if($rows > 0){
     }
 }
 ?>
+<div class="col-md-12"  style="height:590px; margin-top:20px">
  <div class="col-md-3 ">
     
      <div class="col-md-12 text-center">
@@ -138,6 +140,7 @@ if($rows > 0){
         </form>
         </div>
     </div>
+</div>
     <script>
         $(document).ready(function(){
             $('.adr').click(function(){

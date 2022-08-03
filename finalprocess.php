@@ -1,6 +1,9 @@
 <?php
 include('header.php');
 include('dbconnect.php');
+?>
+<div class="col-md-12" style="height:680px">
+<?php
 $userid = $_SESSION['userid'];
 $aid = $_POST['address'];
 $total = $_SESSION['total'];
@@ -9,9 +12,12 @@ $discount = $total*$perc/100;
 $_SESSION['delcharge'];
 $date = date('d/m/Y');
 $time = date('h:i:s');
-
 $cmd7 = "select * from address where aid = '".$aid."'";
 $data7 = mysqli_query($conn, $cmd7);
+$rownum2 = mysqli_num_rows($data7);
+if($rownum2 == 0){
+    echo "please choose address before you continue to payment.";
+   }else{
 $row7 = mysqli_fetch_array($data7);
 $address = $row7[1].",  ".$row7[2].",  ".$row7[4].",  ".$row7[5].",  ".$row7[6].",  ".$row7[7];
 $billname = $row7[1];
@@ -51,9 +57,11 @@ unset($_SESSION['discountid']);
 unset($_SESSION['total']);
 unset($_SESSION['pincode']);
 unset($_SESSION['cart']);
-unset($_SESSION['discount']);?>
+unset($_SESSION['discount']);
+}
+?>
 
-<div class="container">
+<div class="container sty" style="padding:400px;">
 <form action="http://localhost/shoppingo/sucess.php" method="POST">
 <script
     src="https://checkout.razorpay.com/v1/checkout.js"
@@ -72,13 +80,7 @@ unset($_SESSION['discount']);?>
 <input type="hidden" custom="Hidden Element" name="hidden">
 </form>
 </div>
+</div>
 <?php
 include('footer.php');
-
-
-
-
-
-
-
 ?>

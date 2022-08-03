@@ -1,6 +1,6 @@
 <?php
-include('dbconnect.php');
 include('header.php');
+include('dbconnect.php');
 include('leftnav.php');
 ?>
 <div class="col-md-9" style="min-height:700px;">
@@ -21,7 +21,7 @@ include('leftnav.php');
                 <?php
                     $catq = "select catid, name from categories";
                     $datacat = mysqli_query($conn, $catq);
-                    $numrowcat = mysqli_num_rows($data);
+                    $numrowcat = mysqli_num_rows($datacat);
                     if($numrowcat=0){
                         echo "ERROR";
                     }else{

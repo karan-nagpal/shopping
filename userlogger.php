@@ -1,7 +1,6 @@
 <?php
 session_start();
 	include('dbconnect.php');
-
 	$userid = $_POST['userid'];
 	$pass = md5($_POST['password']);
 	
@@ -40,9 +39,7 @@ session_start();
 									$selcmd = "select * from cart where custid = '".$userid."' and proid = '".$pid."'";
 									$seldata = mysqli_query($conn, $selcmd);
 									$selnum = mysqli_num_rows($seldata);
-									echo $selnum;
-									
-										if($selnum == 0){
+									if($selnum == 0){
             		            		$cmd = "insert into cart (custid, proid,qty) values('".$userid."','".$pid."','".$qty."')";
             							$status= mysqli_query($conn, $cmd);                                         
                              		   }
@@ -51,9 +48,7 @@ session_start();
                                 		unset($_SESSION['qty']);
 										unset($_SESSION['unsign']);
 										header("location:cart.php");
-							
 				}else{
-
 				header('location:logchecker.php');
 				}
 			}else{

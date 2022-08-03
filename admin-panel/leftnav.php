@@ -1,8 +1,7 @@
 <?php
-
-if(!isset($_SESSION['aid'])){
-    header('location:index.php');
-}
+// if(!isset($_SESSION['aid'])){
+//     header('location:index.php');
+// }
 ?>
 <div class="col-md-2  text-center mt-5">
     <style>

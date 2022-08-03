@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('dbconnect.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +11,7 @@ include('dbconnect.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-
+    <link rel="stylesheet" href="css/sliderstyle.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/font-awesome.css">
     <link rel="stylesheet" href="css/style.css">
@@ -25,7 +26,7 @@ include('dbconnect.php');
 <nav class="navbar navbar-expand-lg  mb-0 nav-a">
   <div class="container-fluid">
   <a class="navbar-brand" href="index.php"><img src="images/logo.png" id="logo" alt="image"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     <i class="fa fa-bars"></i>
   </button>
@@ -34,10 +35,10 @@ include('dbconnect.php');
     <div id="showresult"></div>
   </div>
   
-     <div class="collapse navbar-collapse">
-       <ul class=" nav navbar-nav  navbar-right">
+     <div class=" col-xs-12 text-center" style="display:flex">
+       <ul class=" nav text-center navbar-right" style="margin:auto">
          <li class="nav-item hornavmenu">
-         <a href="cart.php" class="nav-link">
+         <a href="wishlist.php" class="nav-link">
            <i class="fa fa-heart-o "></i></li>
           </a>  
          <li class="nav-item hornavmenu "><a href="cart.php" class="nav-link ha">
@@ -86,20 +87,21 @@ include('dbconnect.php');
      </div>
 </div>
 </nav>
-
-        <div class=" col-md-12  text-info mt-0 mb-3" style="background-color:#fdc8d0;" id="navbarSupportedContent">
-          <ul class="navbar-nav topnav-right " style="display: inline-block">
-            <li class="nav-link hornavmenu la" ><a href="viewprobcat.php?cid=24" class="nav-item ">MEN</a></li>
-            <li class="nav-link hornavmenu la" ><a href="viewprobcat.php?cid=25" class="nav-item ">WOMEN</a></li>
-            <li class="nav-link hornavmenu la" ><a href="viewprobcat.php?cid=26" class="nav-item ">KIDS</a></li>
-            <li class="nav-link hornavmenu la" ><a href="viewprobcat.php?cid=33" class="nav-item ">ENTERTAINMENT</a></li>
-            <li class="nav-link hornavmenu la" ><a href="viewprobcat.php?cid=28" class="nav-item ">FURNITURE</a></li>
-            <li class="nav-link hornavmenu la" ><a href="viewprobcat.php?cid=34" class="nav-item ">FOOTWEAR</a></li>
-            <li class="nav-link hornavmenu la" ><a href="viewprobcat.php?cid=32" class="nav-item ">WATCHES</a></li>
+<div class="container" style="padding:1px; background-color:lightpink"></div>
+        <div class=" container  text-center mt-0 mb-3 navbar-collapse collapse"  id="navbarSupportedContent">
+        <ul class="navbar-nav topnav-right " style="display: inline-block">
+            <li class="nav-link hornavmenu la" ><a href="viewprobcat.php?cid=2" class="nav-item ">MEN</a></li>
+            <li class="nav-link hornavmenu la" ><a href="viewprobcat.php?cid=10" class="nav-item ">WOMEN</a></li>
+            <li class="nav-link hornavmenu la" ><a href="viewprobcat.php?cid=9" class="nav-item ">KIDS</a></li>
+            <li class="nav-link hornavmenu la" ><a href="viewprobcat.php?cid=12" class="nav-item ">ENTERTAINMENT</a></li>
+            <li class="nav-link hornavmenu la" ><a href="viewprobcat.php?cid=14" class="nav-item ">FURNITURE</a></li>
+            <li class="nav-link hornavmenu la" ><a href="viewprobcat.php?cid=13" class="nav-item ">FOOTWEAR</a></li>
+            <li class="nav-link hornavmenu la" ><a href="viewprobcat.php?cid=11" class="nav-item ">WATCHES</a></li>
             <!-- <li class="nav-link hornavmenu" style="padding-left:38px; padding-right:38px"><a href="" class="nav-item "></a></li>
             <li class="nav-link hornavmenu" style="padding-left:38px; padding-right:38px"><a href="" class="nav-item ">Communications</a></li>
             <li class="nav-link hornavmenu" style="padding-left:38px; padding-right:38px"><a href="" class="nav-item ">Beauty</a></li> -->
           </ul>
+    
         </div>
                 </div>
 <script>

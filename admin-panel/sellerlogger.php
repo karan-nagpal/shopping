@@ -1,9 +1,8 @@
 <?php
 session_start();
 	include('dbconnect.php');
-
 	$userid = $_POST['sellerid'];
-	$pass = md5($_POST['password']);
+	$pass = $_POST['password'];
 	
 	
 	$stmt = mysqli_prepare($conn, "SELECT aid ,name FROM admsdata WHERE  adminid=? AND paswd=? ");
@@ -28,7 +27,9 @@ session_start();
 			$_SESSION['sname']=$n;
 			header('location:dashboard.php');
 			}else{
-				header('location:sellerlogin.php?error');		
+				echo mysqli_error($conn);
+
+				header('location:index.php?error');		
 				
 			}
 		

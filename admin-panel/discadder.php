@@ -7,7 +7,7 @@ include("dbconnect.php");
 $disname = $_POST["disname"];
 $minamt = $_POST["minamt"];
 
-$cmd = "insert into discounts (disperc ,minamnt, status ) values('".$disname."', '".$minamt."', 'Deactivated')";
+$cmd = "insert into discounts (disperc ,minamnt, status ) values('".$disname."', '".$minamt."', 'Active')";
 $status = mysqli_query($conn, $cmd);
 
 if ($status){

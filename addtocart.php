@@ -9,7 +9,7 @@ $pid  =  $_GET['proid'];
 	$cmd2 = "select * from cart where custid = '".$userid."' and proid = '".$pid."'";
 	$data2  = mysqli_query($conn, $cmd2);
 	$numrow4 = mysqli_num_rows($data2);
-	echo $numrow4;
+	
 	if($numrow4 == 0){
 	$cmd = "insert into cart (custid, proid,qty) values('".$userid."','".$pid."','1')";
 	$status= mysqli_query($conn, $cmd);

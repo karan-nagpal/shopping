@@ -1,16 +1,16 @@
-
 <?php
-include('header.php');
-?>
-<div style="min-height:400px" class="text-center">
-<h3 class="text-center">Your Wishlist</h3>
-<?php
+session_start();
 if(isset($_SESSION['userid'])){
-
     $usr = $_SESSION['userid'];
 }else{
     header('location:userlogin.php');
 }
+include('header.php');
+?>
+<div style="min-height:680px" class="text-center">
+<h3 class="text-center">Your Wishlist</h3>
+<?php
+
 $cmd = "select * from wishlist where userid = '".$usr."'";
 $data = mysqli_query($conn, $cmd);
 $numrow = mysqli_num_rows($data);
@@ -37,7 +37,7 @@ if($numrow > 0){
 <?php
     }
 }else{
-    echo "Your Cart is empty.";
+    echo "Your Wishlist is empty.";
 }
 include('footer.php');
 
